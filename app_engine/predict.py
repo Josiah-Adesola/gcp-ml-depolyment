@@ -1,7 +1,7 @@
 import pickle 
 import pandas as pd
 
-model = pickle.load("ai_platform/xg_boost_model.pkl")
+model = pickle.load("app_engine/xg_boost_model.pkl")
 
 def make_prediction(inputs): 
     """
