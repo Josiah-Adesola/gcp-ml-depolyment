@@ -1,7 +1,7 @@
-import joblib 
+import pickle 
 import pandas as pd
 
-model = joblib.load("logistic_regression_v1.pkl")
+model = pickle.load("ai_platform/xg_boost_model.pkl")
 
 def make_prediction(inputs): 
     """
@@ -9,7 +9,8 @@ def make_prediction(inputs):
     """
     inputs_df = pd.DataFrame(
         inputs, 
-        columns=["sepal_length_cm", "sepal_width_cm", "petal_length_cm", "petal_width_cm"]
+        columns=['time', 'speed', 'torque', 'f1', 'f2', 'f3', 'f4', 'f5', 'f6', 'f7',
+       'f8']
         )
     predictions = model.predict(inputs_df)
     
